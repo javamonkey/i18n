@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-@import org.joda.time.*
 <html>
-@args String who, Date javaDate, DateTime dateTime, LocalDateTime localDateTime, LocalDate localDate, LocalTime localTime
 <head>
   <title>Hello World - ActFramework</title>
   <style>
@@ -74,26 +72,11 @@
   </div>
   <section>
     <h4>Java ${i18n("date_object")} - ${i18n("default")} locale</h4>
-    @javaDateTable()
+    <#html:include file="javaDateTable.html"/>
   </section>
-  <section>
-    <h4>Java @i18n("date_object") - Italy</h4>
-    @locale("it") {
-      @javaDateTable()
-    }
-  </section>
-  <section>
-    <h4>Joda @i18n("date_object") - @i18n("default") locale</h4>
-    @jodaDateTable()
-  </section>
-  <section>
-    <h4>Joda @i18n("date_object") - Italy</h4>
-    @locale("it") {
-      @jodaDateTable()
-    }
-  </section>
+
   <p>
-    $//{i18n("powered_by_act", act.Act.VERSION.getVersion())}
+    \${i18n("powered_by_act", act.Act.VERSION.getVersion())}
   </p>
 </body>
 </html>
